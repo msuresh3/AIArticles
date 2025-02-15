@@ -10,20 +10,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+        
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-
+          
       - name: Install dependencies
         run: pip install -r requirements.txt
-
+        working-directory: ./  # Ensure the correct working directory is set
+          
       - name: Run script
         env:
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
         run: python AITestVSCode.py
-
+        working-directory: ./  # Ensure the correct working directory is set
+        
       - name: Commit and push results
         run: |
           git config --global user.name "GitHub Actions"
@@ -31,3 +33,4 @@ jobs:
           git add AI_News_*.csv
           git commit -m "Add daily AI news"
           git push
+        working-directory: ./  # Ensure the correct working directory is set
