@@ -22,7 +22,7 @@ jobs:
       - name: Run script
         env:
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
-        run: python ai_news_aggregator.py
+        run: python AITestVSCode.py
 
       - name: Commit and push results
         run: |
