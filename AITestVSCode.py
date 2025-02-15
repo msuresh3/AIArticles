@@ -10,9 +10,13 @@ def fetch_articles():
     start_day = date.today() - timedelta(2)
     format = '%Y-%m-%d'
     start_date = start_day.strftime(format)
-    url_txt = "https://newsapi.org/v2/everything?q=AI+Machine+Learning+Deep+Learning&from="+ start_date +"&sortBy=publishedAt&apiKey={api_key}"
+    url = "https://newsapi.org/v2/everything?q=AI+Machine+Learning+Deep+Learning&from="+ start_date +"&sortBy=publishedAt&apiKey={api_key}"
     response = requests.get(url).json()
-    return response['articles']
+    if(response['status'] != 'error') :
+        return response['articles']
+    else :
+        print("Your API key is invalid or incorrect")
+        return "error"
 
 def scrape_article_text(url):
     try:
