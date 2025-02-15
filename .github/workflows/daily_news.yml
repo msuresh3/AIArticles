@@ -23,7 +23,7 @@ jobs:
       - name: Run script
         env:
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
-        run: python AITestVSCode.py
+        run: python ./AITestVSCode.py
         #working-directory: ./  # Ensure the correct working directory is set
         
       - name: Commit and push results
