@@ -1,8 +1,7 @@
 # requirements.txt
-requests
-pandas
-beautifulsoup4
-datetime
-MIMEText
-numpy
-
+feedparser==6.0.10
+requests==2.31.0
+pandas==2.1.0
+beautifulsoup4==4.12.2
+transformers==4.34.0
+torch==2.0.1
