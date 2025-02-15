@@ -17,14 +17,14 @@ jobs:
           python-version: '3.10'
           
       - name: Install dependencies
-        run: pip install -r requirements.txt
-        working-directory: ./  # Ensure the correct working directory is set
+        run: pip install -r ./requirements.txt
+        #working-directory: ./  # Ensure the correct working directory is set
           
       - name: Run script
         env:
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
         run: python AITestVSCode.py
-        working-directory: ./  # Ensure the correct working directory is set
+        #working-directory: ./  # Ensure the correct working directory is set
         
       - name: Commit and push results
         run: |
@@ -33,4 +33,4 @@ jobs:
           git add AI_News_*.csv
           git commit -m "Add daily AI news"
           git push
-        working-directory: ./  # Ensure the correct working directory is set
+        #working-directory: ./  # Ensure the correct working directory is set
