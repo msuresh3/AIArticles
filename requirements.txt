@@ -5,4 +5,4 @@ pandas
 beautifulsoup4
 transformers
 torch
-MIMEText
+email.mime.text
