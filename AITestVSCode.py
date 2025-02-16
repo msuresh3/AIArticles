@@ -11,6 +11,7 @@ def fetch_articles():
     format = '%Y-%m-%d'
     start_date = start_day.strftime(format)
     url = "https://newsapi.org/v2/everything?q=AI+Machine+Learning+Deep+Learning&from="+ start_date +"&sortBy=publishedAt&apiKey="+api_key
+    print (url)
     response = requests.get(url).json()
     if(response['status'] != 'error') :
         return response['articles']
