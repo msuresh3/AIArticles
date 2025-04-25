@@ -61,4 +61,4 @@ top_5.to_csv(f"AI_News_{today}.csv")
 
 # Generate email body from top_5 DataFrame
 email_body = "\n".join([f"{i+1}. {row['title']} - {row['url']}" for i, row in top_5.iterrows()])
-send_email(email_body)
+#send_email(email_body)
